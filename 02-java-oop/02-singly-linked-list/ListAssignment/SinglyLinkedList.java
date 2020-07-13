@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class SinglyLinkedList {
     public Node head;
     public SinglyLinkedList() {
@@ -43,5 +45,17 @@ public class SinglyLinkedList {
             currentNode = currentNode.next;
         }
     }
+
+    // public int find(int value){
+    //     Node currentNode = head;
+    //     int count = 0;
+
+    //     while(currentNode != null){
+    //         if (currentNode.data == value){
+    //             return count;
+    //         }
+    //         count++;
+    //     }
+    // }
 
 }
