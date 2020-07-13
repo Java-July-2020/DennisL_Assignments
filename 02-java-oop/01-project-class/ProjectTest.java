@@ -27,7 +27,7 @@ class ProjectTest{
         System.out.println(pj3.elevatorPitch());
 
 
-        Portfolio pf = new Portfolio();
-        pf.setPorfolioProject(pj3);
+        // Portfolio pf = new Portfolio();
+        // pf.setPorfolioProject(pj3);
     }
 }
