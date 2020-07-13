@@ -1,6 +1,7 @@
 class Project{
     private String name;
     private String description;
+    private Double initialCost;
 
     public Project(){
     }
@@ -12,6 +13,12 @@ class Project{
     public Project(String name, String description){
         this.name = name;
         this.description = description;
+    }
+
+    public Project(String name, String description, Double initialCost){
+    this.name = name;
+    this.description = description;
+    this.initialCost = initialCost;
     }
 
     public void setName(String name){
@@ -30,7 +37,15 @@ class Project{
         return description;
     }
 
+    public void setInitialCost(Double initialCost){
+        this.initialCost= initialCost;
+    }
+
+    public String getInitialCost(){
+        return Double.toString(initialCost);
+    }
+
     public String elevatorPitch(){
-        return name + ":" + description;
+        return name + " (" + Double.toString(initialCost) +") : " + description;
     }
 }
