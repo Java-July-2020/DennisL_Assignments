@@ -1,2 +1,7 @@
 # ignores a directory .idea/
 .idea/
+/.metadata/
+.classpath
+.project
+bin/
+other/
