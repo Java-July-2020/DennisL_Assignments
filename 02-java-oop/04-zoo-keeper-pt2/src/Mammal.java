@@ -1,5 +1,5 @@
 public class Mammal {
-	int energyLevel;
+	protected int energyLevel;
 
 	public Mammal() {
 		energyLevel = 100;

@@ -11,6 +11,9 @@ public class HumanTest {
 		Wizard w1 = new Wizard();
 		System.out.println("w1's Health:" + w1.health);
 		
+		Samurai s1 = new Samurai();
+		System.out.println("s1's Health:" + s1.health);
+		
 		n1.attack(w1);
 		System.out.println("w1's Health:" + w1.health);
 	}
