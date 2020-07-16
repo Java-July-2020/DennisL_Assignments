@@ -24,7 +24,7 @@ public class Calculator implements java.io.Serializable{
 	public void getResults() {
 		
 		if (oper.get(oper.size()-1).equals("=")) {
-			System.out.println("How many equal signs: " + containsEqual);
+//			System.out.println("How many equal signs: " + containsEqual);
 			System.out.println("We can start caculating");
 			
 			//Calculate multi & div first
