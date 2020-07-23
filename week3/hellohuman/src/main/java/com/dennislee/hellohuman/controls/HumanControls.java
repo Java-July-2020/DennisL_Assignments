@@ -15,9 +15,16 @@ public class HumanControls {
 //    }
     
     @RequestMapping("/")
-    public String index(@RequestParam(value="name", required=false) String uname, Model model) {
-    	if (uname != null) {
+    public String index(@RequestParam(value="name", required=false) String uname, @RequestParam(value="last_name", required=false) String lname, Model model) {
+    	if (uname != null && lname != null) {
     		model.addAttribute("userName", uname);
+    		model.addAttribute("lastName", lname);
+    	}
+    	else if (uname != null && lname == null) {
+    		model.addAttribute("userName", uname);
+    	}
+    	else if (uname == null && lname != null) {
+    		model.addAttribute("lastName", lname);
     	}
     	else {
     		model.addAttribute("userName", "Human");
