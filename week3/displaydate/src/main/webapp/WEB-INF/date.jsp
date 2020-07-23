@@ -6,9 +6,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Homepage</title>
+	<title>Datepage</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="date.js"></script>
 </head>
 <body>
-	<h1>Date Page</h1>
+	<h4 class="contentDisplay" id="date"><c:out value="${dateDate}"/></h4>
 </body>
 </html>

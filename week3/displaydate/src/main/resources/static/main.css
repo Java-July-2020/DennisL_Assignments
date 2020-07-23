@@ -6,3 +6,9 @@
 	display:inline-block;
 	margin-left: 50px;
 }
+#time{
+	color:green;
+}
+#date{
+	color:blue;
+}
