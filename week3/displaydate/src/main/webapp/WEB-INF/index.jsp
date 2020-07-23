@@ -12,7 +12,7 @@
 <body>
 	<h1>Welcome, the Main Page!</h1>
 	<div id="maindiv">
-	<p class="links"><a href="/" value="return">Date Template</a></p>
+	<p class="links"><a href="/date">Date Template</a></p>
 	<p class="links"><a href="/time">Time Template</a></p>
 	</div>
 </body>
