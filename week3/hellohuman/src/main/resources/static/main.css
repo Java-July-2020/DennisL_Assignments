@@ -1,0 +1,8 @@
+#maindiv{
+	display:block;
+}
+
+.links{
+	display:inline-block;
+	margin-left: 50px;
+}
