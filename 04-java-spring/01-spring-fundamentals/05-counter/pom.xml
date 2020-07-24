@@ -8,12 +8,12 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dennislee.hellohuman</groupId>
-	<artifactId>hellohuman</artifactId>
+	<groupId>com.dennislee.counter</groupId>
+	<artifactId>05-counter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>hellohuman</name>
-	<description>Hello Human Project in Spring Boot</description>
+	<name>05-counter</name>
+	<description>Counter Project in Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
