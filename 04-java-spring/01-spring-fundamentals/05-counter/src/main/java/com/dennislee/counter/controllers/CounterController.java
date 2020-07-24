@@ -32,6 +32,10 @@ public class CounterController {
     
 	@RequestMapping("/counter")
 	public String counter(HttpSession session, Model model) {
+        if(session.getAttribute("count") == null) {
+            session.setAttribute("count", 0);
+        }
+        
 		String count = session.getAttribute("count").toString();
 		model.addAttribute("counts", count);
 		return "counter.jsp";
