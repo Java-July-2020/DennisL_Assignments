@@ -9,6 +9,6 @@
 	<title>Homepage</title>
 </head>
 <body>
-	<p>You have visited <a href="http://localhost:8080">localhost:8080</a><c:out value="${counts}"/> times.</p>
+	<p>You have visited <a href="http://localhost:8080">localhost:8080</a> <c:out value="${counts}"/> times.</p>
 	<p><a href="http://localhost:8080">Test another visit?</a></p>
 </html>
