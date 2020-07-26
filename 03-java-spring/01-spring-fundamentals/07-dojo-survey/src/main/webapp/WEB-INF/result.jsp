@@ -9,15 +9,15 @@
 		<h1>Submitted Info</h1>
 		<div id="mainDiv">
 			<div class="rows">
-				<p>Your Name: <c:out value="${name}"></c:out></p>
+				<p >Your Name: <span class="inputs"><c:out value="${name}" ></c:out></span></p>
 			</div>
 			<div class="rows">
-				<p>Dojo Location: <c:out value="${location}"></c:out></p>
+				<p>Dojo Location: <span class="inputs"><c:out value="${location}"></c:out></span></p>
 			</div>
 			<div class="rows">
-				<p>Favorite Language: <c:out value="${language}"></c:out>!!!</p>
+				<p>Favorite Language: <span class="inputs"><c:out value="${language}"></c:out>!!!</span></p>
 			</div>
-				<p>Comment: <c:out value="${comment}"></c:out></p>
+				<p>Comment: <span class="inputs"><c:out value="${comment}"></c:out></span></p>
 			<div class="rows">
 				<a href="http://localhost:8080">
    					<button>Go Back</button>

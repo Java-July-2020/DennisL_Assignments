@@ -10,12 +10,12 @@
 		<div id="mainDiv">
 			<form method="post" action="/result">
 				<div class="rows">
-					<p>Your Name: <input type="text" name="name"></p>
+					<p>Your Name: <input type="text" name="name" class="inputs"></p>
 				</div>
 				<div class="rows">
 					<p>
 						<label for="locations">Dojo Location:</label>
-						<select name="locations" id="locations">
+						<select name="locations" id="locations" class="inputs">
 							<option value="San Jose">San Jose</option>
 							<option value="location2">Location2</option>
 						</select>
@@ -24,7 +24,7 @@
 				<div class="rows">
 					<p>
 						<label for="languages">Favorite Language:</label>
-						<select name="languages" id="languages">
+						<select name="languages" id="languages" class="inputs">
 							<option value="Python">Python</option>
 							<option value="Java">Java</option>
 						</select>

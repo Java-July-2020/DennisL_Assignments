@@ -5,11 +5,18 @@ body {
 #mainDiv{
 	border: 2px solid black;
 	margin-left: 20px;
-	width: 600px;
+	width: 450px;
 	height: 300px;
-	padding: 5px;
+	padding-top: 5px;
+	padding-left: 20px;
 }
 
 .rows{
 	display:block;
+}
+
+.inputs{
+	float: right;
+	width: 150px;
+	margin-right: 30px;
 }
