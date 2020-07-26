@@ -11,38 +11,16 @@
 </head>
 <body>
 	<h1>Ninja Gold</h1>
-	<h3>Your Gold: <c:out value="${totalGold}"></c:out></h3>
-	<div class="building">
-		<h3>Farm</h3>
-		<p>(earn 10-20 gold)</p>
-		<form method="post" action="/getGold">
-			<input type="hidden" name="building" value="farm">
-			<button>Find Gold!</button>
-		</form>
-	</div>
+	<h3>Your Gold: <c:out value="${totalGold}"></c:out></h3>	
+	<c:forEach items="${myBuildings}" var="building">
 		<div class="building">
-		<h3>Cave</h3>
-		<p>(earn 5-10 gold)</p>
-		<form method="post" action="/getGold">
-			<input type="hidden" name="building" value="cave">
-			<button>Find Gold!</button>
-		</form>
-	</div>
-		<div class="building">
-		<h3>House</h3>
-		<p>(earn 2-5 gold)</p>
-		<form method="post" action="/getGold">
-			<input type="hidden" name="building" value="house">
-			<button>Find Gold!</button>
-		</form>
-	</div>
-	<div class="building">
-		<h3>Casino</h3>
-		<p>(earns/lose 0-50 gold)</p>
-		<form method="post" action="/getGold">
-			<input type="hidden" name="building" value="casino">
-			<button>Find Gold!</button>
-		</form>
-	</div>
+			<h3><c:out value="${building.getName()}"></c:out></h3>
+			<p>(earn <c:if test="${building.getCanLose()}"> / lose </c:if><c:out value="${building.getMin()}"></c:out>-<c:out value="${building.getMax()}"></c:out> gold)</p>
+			<form method="post" action="/getGold">
+				<input type="hidden" name="building" value="<c:out value="${building.getName()}"></c:out>">
+				<button>Find Gold!</button>
+			</form>
+		</div>
+	</c:forEach>
 </body>
 </html>
