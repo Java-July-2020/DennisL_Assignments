@@ -1,0 +1,12 @@
+body {
+	background-color: grey;
+}
+
+#mainDiv{
+	text-align: center;
+	margin-left: 50px;
+}
+
+#error{
+	color: red;
+}
