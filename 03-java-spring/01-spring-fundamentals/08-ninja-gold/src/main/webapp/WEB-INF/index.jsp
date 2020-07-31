@@ -22,5 +22,11 @@
 			</form>
 		</div>
 	</c:forEach>
+	<h3>Activities</h3>
+	<div>
+	<textarea rows="10" cols="100" id="textArea">
+		
+	</textarea>
+	</div>
 </body>
 </html>
