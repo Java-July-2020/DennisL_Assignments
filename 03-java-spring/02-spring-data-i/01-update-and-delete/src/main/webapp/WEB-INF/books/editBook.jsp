@@ -1,7 +1,10 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
-<h1>New Book</h1>
-<h1>new.jsp</h1>
-<form:form action="/books" method="post" modelAttribute="book">
+<body>
+<h1>books/editBook.jsp</h1>
+<h1><c:out value="${book.title}"/></h1>
+
+<form:form action="/books/edit/${id}" method="post" modelAttribute="book">
     <p>
         <form:label path="title">Title</form:label>
         <form:errors path="title"/>
@@ -21,6 +24,6 @@
         <form:label path="numberOfPages">Pages</form:label>
         <form:errors path="numberOfPages"/>     
         <form:input type="number" path="numberOfPages"/>
-    </p>    
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="update">
 </form:form>
+</body>

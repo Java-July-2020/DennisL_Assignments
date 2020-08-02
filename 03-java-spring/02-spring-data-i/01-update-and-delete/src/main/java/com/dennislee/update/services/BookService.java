@@ -40,4 +40,9 @@ public class BookService {
 	     }
 	 }
 	 
+	 // update a book
+		public Book updateBook(Long id, Book updatedBook) {
+			return this.bookRepository.save(updatedBook);
+		}
+	 
 }
