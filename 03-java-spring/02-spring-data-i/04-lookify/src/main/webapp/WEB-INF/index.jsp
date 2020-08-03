@@ -5,6 +5,7 @@
 	<title>My HomePage</title>
 	</head>
 	<body>
-		<h1>Lookify index.jsp</h1>
+		<h1>Welcome to Lookify!</h1>
+		<p><a href="/dashboard">Start Looking!</a>
 	</body>
 </html>

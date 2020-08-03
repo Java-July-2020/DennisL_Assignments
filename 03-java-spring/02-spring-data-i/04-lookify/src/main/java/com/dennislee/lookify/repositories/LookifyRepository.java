@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.dennislee.lookify.models.Lookify;
 
 @Repository
-public interface lookifyRepository extends CrudRepository<Lookify, Long>{
+public interface LookifyRepository extends CrudRepository<Lookify, Long>{
 
 	List<Lookify> findAll();
 }
