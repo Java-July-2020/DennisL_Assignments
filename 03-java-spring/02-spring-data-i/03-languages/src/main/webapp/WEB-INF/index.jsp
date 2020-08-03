@@ -22,7 +22,7 @@
 						<td><a href="/languages/${language.id}">${language.name}</a></td>
 						<td>${language.creator}</td>
 						<td>${language.currentVersion}</td>
-						<td><a href="/languages/delete/${language.id}">delete </a><a href="/languages/edit/${language.id}">edit</a></td>
+						<td><a href="/languages/delete/${language.id}">delete </a><a href="/languages/${language.id}/edit">edit</a></td>
 			    	</tr></c:forEach>
 			    </tbody>
 			</table>

@@ -65,7 +65,7 @@ public class LanguageController {
 	       return "showLanguage.jsp";
 	   }
 	   
-	   @RequestMapping("/languages/edit/{id}")
+	   @RequestMapping("/languages/{id}/edit")
 	   public String editLanguage(@PathVariable("id") Long id, Model model) {
 	       Language updateLanguage = lService.getLanguage(id);
 	       if (updateLanguage != null){
@@ -76,7 +76,7 @@ public class LanguageController {
 	       }
 	   }
 	   
-	   @PostMapping("/languages/edit/{id}")
+	   @PostMapping("/languages/{id}/edit")
 	   public String updateLanguage(@PathVariable("id") Long id, @Valid @ModelAttribute("language") Language language, BindingResult result) {
 	       if (result.hasErrors()) {
 	           return "/editLanguage.jsp";

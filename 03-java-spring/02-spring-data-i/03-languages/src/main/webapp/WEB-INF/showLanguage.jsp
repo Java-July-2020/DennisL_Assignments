@@ -8,7 +8,7 @@
 <div>
 <p>Language: <c:out value="${language.name}"/></p>
 <p>Creator: <c:out value="${language.creator}"/></p>
-<p><a href="/languages/edit/${language.id}">Edit</a></p>
+<p><a href="/languages/${language.id}/edit">Edit</a></p>
 <p><a href="/languages/delete/${language.id}">Delete</a></p>
 </div>
 </body>

@@ -2,9 +2,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
 <body>
 <h1>editLanguage.jsp</h1>
+<div>
+<p><a href="/languages/delete/${language.id}">Delete </a> <a href="/languages"> Dashboard</a></p>
+</div>
+<div>
 <h1><c:out value="${language.name}"/></h1>
-
-<form:form action="/languages/edit/${id}" method="post" modelAttribute="language">
+<form:form action="/languages/${id}/edit" method="post" modelAttribute="language">
     <p>
         <form:label path="name">Name</form:label>
         <form:errors path="name"/>
@@ -19,6 +22,8 @@
         <form:label path="currentVersion">Version</form:label>
         <form:errors path="currentVersion"/>     
         <form:input type="number" path="currentVersion"/>
-    <input type="submit" value="update">
+    </p>
+    <p><input type="submit" value="update"></p>
 </form:form>
+</div>
 </body>
