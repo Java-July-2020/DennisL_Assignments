@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,7 +40,6 @@ public class LookifyController {
 	  public String newSong(@ModelAttribute("song") Lookify song) {
 	      return "new.jsp";
 	  }
-	  
 		 
 	  @RequestMapping(value="/dashboard", method=RequestMethod.POST)
 	  public String create(@Valid @ModelAttribute("song") Lookify song, BindingResult result) {
@@ -50,4 +50,17 @@ public class LookifyController {
 	          return "redirect:/dashboard";
 	      }
 	  }
+	  
+	  @RequestMapping(value="/songs/{id}")
+	  public String findSongByIndex(@PathVariable(value="id") Long id, Model model) {
+		  Lookify song = lService.getSong(id);
+		  model.addAttribute("song", song);
+		  return "showSong.jsp";
+	  }
+	  
+	   @RequestMapping(value="/songs/delete/{id}")
+	   public String deleteSong(@PathVariable("id") Long id) {
+	       lService.deleteSong(id);
+	       return "redirect:/dashboard";
+	   }
 }
