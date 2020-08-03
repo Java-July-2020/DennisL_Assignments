@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="edit.css">
+		<link rel="stylesheet" type="text/css" href="css/edit.css">
 	</head>   
 	<body>
 		<h1>editLanguage.jsp</h1>

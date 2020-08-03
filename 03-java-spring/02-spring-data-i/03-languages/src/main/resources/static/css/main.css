@@ -1,0 +1,39 @@
+#mainBody {
+
+}
+
+#tableOne{
+	border: 2px solid black;
+	background-color: grey;
+	width: 500px;
+	text-align: left;
+}
+
+.rows{
+}
+
+.thead {
+	border-right: 2px solid black;
+}
+
+.tbody {
+	border-right: 2px solid black;
+}
+
+#submitForm{
+	width: 500px;
+}
+
+.field {
+	margin-left: 20px;
+}
+
+.inputField {
+	float: right;
+	margin-right: 60px;
+}
+
+#submitButton {
+	float: right;
+	margin: 10px 60px 0px 0px;
+}

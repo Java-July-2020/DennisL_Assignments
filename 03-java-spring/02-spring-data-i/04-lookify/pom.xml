@@ -8,12 +8,12 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dennislee.languages</groupId>
-	<artifactId>03-languages</artifactId>
+	<groupId>com.dennislee.lookify</groupId>
+	<artifactId>04-lookify</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>03-languages</name>
-	<description>Languages project for Spring Boot</description>
+	<name>04-lookify</name>
+	<description>Lookify project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -64,6 +64,7 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
+		
 	</dependencies>
 
 	<build>

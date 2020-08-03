@@ -1,12 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="show.css">
+		<link rel="stylesheet" type="text/css" href="css/show.css"/>
 	</head>
 	<body>
-	<h1>showBook.jsp</h1>
 		<div>
-			<p><a href="/languages">Dashboard</a></p>
+			<p id="dashboardLink"><a href="/languages">Dashboard</a></p>
 		</div>
 		<div>
 			<p>Language: <c:out value="${language.name}"/></p>
