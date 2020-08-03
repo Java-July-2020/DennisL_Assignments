@@ -59,11 +59,11 @@ public class Language {
 	public Language() {
 	}
 
-	public Language(@Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String creator) {
-		super();
-		this.name = name;
-		this.creator = creator;
-	}
+//	public Language(@Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String creator) {
+//		super();
+//		this.name = name;
+//		this.creator = creator;
+//	}
 
 	public Language(@Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String creator,
 			@NotNull double currentVersion) {
