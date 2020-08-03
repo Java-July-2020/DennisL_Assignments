@@ -54,18 +54,23 @@ public class Language {
     @PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();
-        this.currentVersion = this.currentVersion + 0.1;
     }
 
 	public Language() {
-		this.currentVersion = 1.0;
 	}
 
 	public Language(@Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String creator) {
 		super();
 		this.name = name;
 		this.creator = creator;
-		this.currentVersion = 1.0;
+	}
+
+	public Language(@Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String creator,
+			@NotNull double currentVersion) {
+		super();
+		this.name = name;
+		this.creator = creator;
+		this.currentVersion = currentVersion;
 	}
 
 	public Long getId() {
