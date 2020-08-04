@@ -1,17 +1,17 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
-	<title>My DashBoard</title>
+	<title>Artist Songs</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	</head>
 	<body>
 		<div id="topDiv">
-			<a href="songs/new">Add New</a>
-			<a href="songs/topTen">Top Songs</a>
+			<p>Songs by: <c:out value="${artist}"></c:out><p>
 			<form action="songs/search" method="post">
 	  		<input type="text" id="search" name="search">
 	  		<input type="submit" value="Search Artist"/>
 	 	 	</form>
+	 	 	<a href="/dashbaord">Dashboard</a>
 		</div>
 		<div id="botDiv">
 			<table class="table table-dark">

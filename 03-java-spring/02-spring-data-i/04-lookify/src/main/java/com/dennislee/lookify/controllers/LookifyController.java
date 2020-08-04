@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dennislee.lookify.models.Lookify;
 import com.dennislee.lookify.services.LookifyService;
@@ -64,9 +66,13 @@ public class LookifyController {
 	       return "redirect:/dashboard";
 	   }
 	   
-	   @RequestMapping(value="/songs/search/{artist}")
-	   public String findArtistSongs(@PathVariable("artist") String artist) {
-	       lService.findArtistSongs(artist);
+	   
+	   @RequestMapping(value="/songs/search", method=RequestMethod.POST)
+	   public String searchArtist(@RequestParam(name="search") String artist, Model model) {
+	       List<Lookify> songs = lService.findArtistSongs(artist);
+	       model.addAttribute("songs", songs);
+	       model.addAttribute("artist", artist);
 	       return "artistSongs.jsp";
 	   }
+	   
 }
