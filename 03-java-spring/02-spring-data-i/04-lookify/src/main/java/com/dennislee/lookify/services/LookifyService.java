@@ -41,5 +41,9 @@ public class LookifyService {
 	public Lookify updateSong(Long id, Lookify updateSong) {
 		return this.lRepo.save(updateSong);
 	}
+	
+	public List<Lookify> findArtistSongs(String artist) {
+		return this.lRepo.findByArtistContaining(artist);
+	}
 
 }

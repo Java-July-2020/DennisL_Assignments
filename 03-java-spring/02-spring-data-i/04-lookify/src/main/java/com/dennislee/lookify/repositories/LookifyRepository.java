@@ -11,8 +11,8 @@ import com.dennislee.lookify.models.Lookify;
 public interface LookifyRepository extends CrudRepository<Lookify, Long>{
 
 	List<Lookify> findAll();
+
+	List<Lookify> findTop10ByOrderByRatingDesc();
 	
-//    List<Lookify> findByDescriptionContaining(String search);
-//    
-//    Long countByTitleContaining(String search);
+	List<Lookify> findByArtistContaining(String artist);
 }

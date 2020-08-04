@@ -63,4 +63,10 @@ public class LookifyController {
 	       lService.deleteSong(id);
 	       return "redirect:/dashboard";
 	   }
+	   
+	   @RequestMapping(value="/songs/search/{artist}")
+	   public String findArtistSongs(@PathVariable("artist") String artist) {
+	       lService.findArtistSongs(artist);
+	       return "artistSongs.jsp";
+	   }
 }
