@@ -8,10 +8,10 @@
 		<div id="topDiv">
 			<p>Songs by artist: <c:out value="${artist}"></c:out><p>
 			<form action="songs/search" method="post">
-	  			<input type="text" id="search" name="search"><c:out value="${artist}"></c:out>
+	  			<input type="text" id="search" name="search">
 	  			<input type="submit" value="New Search"/>
 	 	 	</form>
-	 	 	<a href="/dashbaord">Dashboard</a>
+	 	 	<p><a href="/dashboard">Dashboard</a></p>
 		</div>
 		<div id="botDiv">
 			<table class="table table-dark">
