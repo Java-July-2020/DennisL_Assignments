@@ -7,7 +7,7 @@
 	<body>
 		<div id="topDiv">
 			<a href="songs/new">Add New</a>
-			<a href="songs/topTen">Top Songs</a>
+			<a href="search/topTen">Top Songs</a>
 			<form action="songs/search" method="post">
 	  		<input type="text" id="search" name="search">
 	  		<input type="submit" value="Search Artist"/>
@@ -17,9 +17,9 @@
 			<table class="table table-dark">
 			<thead>
 				<tr>
-					<td>Title</td>
+					<td>Name</td>
 					<td>Rating</td>
-					<td>Action</td>
+					<td>Actions</td>
 				</tr>
 			</thead>
 			<tbody><c:forEach items="${songs}" var="song">

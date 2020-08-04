@@ -45,5 +45,9 @@ public class LookifyService {
 	public List<Lookify> findArtistSongs(String artist) {
 		return this.lRepo.findByArtistContaining(artist);
 	}
+	
+	public List<Lookify> findTopTen(){
+		return this.lRepo.findTop10ByOrderByRatingDesc();
+	}
 
 }
