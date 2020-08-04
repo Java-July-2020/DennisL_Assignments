@@ -71,6 +71,7 @@ public class LookifyController {
 	       List<Lookify> songs = lService.findArtistSongs(artist);
 	       model.addAttribute("songs", songs);
 	       model.addAttribute("artist", artist);
+//	       System.out.println(artist);
 	       return "artistSongs.jsp";
 	   }
 	   

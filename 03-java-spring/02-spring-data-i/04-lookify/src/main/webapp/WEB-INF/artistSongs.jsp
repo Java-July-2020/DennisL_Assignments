@@ -6,10 +6,10 @@
 	</head>
 	<body>
 		<div id="topDiv">
-			<p>Songs by: <c:out value="${artist}"></c:out><p>
+			<p>Songs by artist: <c:out value="${artist}"></c:out><p>
 			<form action="songs/search" method="post">
-	  		<input type="text" id="search" name="search">
-	  		<input type="submit" value="Search Artist"/>
+	  			<input type="text" id="search" name="search"><c:out value="${artist}"></c:out>
+	  			<input type="submit" value="New Search"/>
 	 	 	</form>
 	 	 	<a href="/dashbaord">Dashboard</a>
 		</div>

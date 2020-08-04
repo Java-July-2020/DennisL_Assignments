@@ -9,8 +9,8 @@
 			<a href="songs/new">Add New</a>
 			<a href="search/topTen">Top Songs</a>
 			<form action="songs/search" method="post">
-	  		<input type="text" id="search" name="search">
-	  		<input type="submit" value="Search Artist"/>
+	  			<input type="text" id="search" name="search">
+	  			<input type="submit" value="Search Artist"/>
 	 	 	</form>
 		</div>
 		<div id="botDiv">
