@@ -29,7 +29,8 @@ public class BookController {
 	//This is only printing the all the current books;
 	 @RequestMapping("/books") 
 	 public String index(Model model) { 
-		 List<Book> books = bookService.allBooks(); model.addAttribute("books", books); 
+		 List<Book> books = bookService.allBooks(); 
+		 model.addAttribute("books", books); 
 		 return "/books/index.jsp"; 
 	 }
 	 

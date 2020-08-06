@@ -26,7 +26,7 @@ public class License {
 	
 	private String number;
 	
-	private Date expireation_date;
+	private Date expiration_date;
 	
 	private String state;
 	
@@ -53,6 +53,14 @@ public class License {
 
 	public License() {
 	}
+	
+	
+	public License(Date expireation_date, String state, Person person) {
+		super();
+		this.expiration_date = expireation_date;
+		this.state = state;
+		this.person = person;
+	}
 
 	public Long getId() {
 		return id;
@@ -70,12 +78,12 @@ public class License {
 		this.number = number;
 	}
 
-	public Date getExpireation_date() {
-		return expireation_date;
+	public Date getExpiration_date() {
+		return expiration_date;
 	}
 
-	public void setExpireation_date(Date expireation_date) {
-		this.expireation_date = expireation_date;
+	public void setExpiration_date(Date expireation_date) {
+		this.expiration_date = expireation_date;
 	}
 
 	public String getState() {
