@@ -24,6 +24,7 @@ public class License {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@GeneratedValue
 	private String number;
 	
 	private Date expiration_date;
