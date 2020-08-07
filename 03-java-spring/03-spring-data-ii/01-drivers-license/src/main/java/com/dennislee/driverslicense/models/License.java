@@ -27,7 +27,7 @@ public class License {
 	@GeneratedValue
 	private String number;
 	
-	@DateTimeFormat(pattern = "MM/dd/yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expiration_date;
 	
 	private String state;
