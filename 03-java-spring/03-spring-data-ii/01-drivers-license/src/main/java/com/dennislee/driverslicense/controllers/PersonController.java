@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -47,4 +48,11 @@ public class PersonController {
           return "redirect:/persons";
       }
   }
+  
+	@RequestMapping("persons/{id}")
+	public String viewPerson(@PathVariable("id") Long id, Model model) {
+		Person person = pService.getOnePerson(id);
+		model.addAttribute("person", person);
+		return "show.jsp";
+	}
 }

@@ -25,4 +25,9 @@ public class PersonService {
 	 public Person createPerson(Person person) {
 	     return pRepo.save(person);
 	 }
+	 
+	 public Person getOnePerson(Long id) {
+		Person set = this.pRepo.findById(id).orElse(null);
+		return set;
+	 }
 }
