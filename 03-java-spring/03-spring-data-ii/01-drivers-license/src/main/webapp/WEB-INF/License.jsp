@@ -11,14 +11,16 @@
 		<table class="table table-dark">
 		<thead>
 			<tr>
-				<td>Person</td>
+				<td>First Name</td>
+				<td>Last Name</td>
 				<td>State:</td>
 				<td>License Expire:</td>
 			</tr>
 		</thead>
 		<tbody><c:forEach items="${licenses}" var="license">
 			<tr>
-				<td>${license.person}</td>
+				<td>${license.person.firstName}</td>
+				<td>${license.person.lastName}</td>
 				<td>${license.state}</td>
 				<td>${license.expiration_date}</td>
 			</tr>

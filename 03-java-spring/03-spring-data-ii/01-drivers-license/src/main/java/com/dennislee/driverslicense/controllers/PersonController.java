@@ -12,15 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dennislee.driverslicense.models.Person;
+import com.dennislee.driverslicense.services.LicenseService;
 import com.dennislee.driverslicense.services.PersonService;
 
 @Controller
 public class PersonController {
 	
 	private final PersonService pService;
+	private final LicenseService lService;
 	
-	public PersonController(PersonService service) {
+	public PersonController(PersonService service, LicenseService lService) {
 		this.pService = service;
+		this.lService = lService;
 	}
 
 	@RequestMapping("/persons/new")

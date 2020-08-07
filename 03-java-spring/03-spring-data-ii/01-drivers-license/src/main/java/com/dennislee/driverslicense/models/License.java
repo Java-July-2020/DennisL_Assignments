@@ -27,6 +27,7 @@ public class License {
 	@GeneratedValue
 	private String number;
 	
+	@DateTimeFormat(pattern = "MM/dd/yyyy")
 	private Date expiration_date;
 	
 	private String state;
@@ -53,14 +54,6 @@ public class License {
     private Person person;
 
 	public License() {
-	}
-	
-	
-	public License(Date expireation_date, String state, Person person) {
-		super();
-		this.expiration_date = expireation_date;
-		this.state = state;
-		this.person = person;
 	}
 
 	public Long getId() {

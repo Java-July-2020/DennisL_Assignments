@@ -37,7 +37,7 @@ public class LicenseController {
 	 @RequestMapping("/licenses") 
 	 public String index(Model model) { 
 		 List<License> license = lService.allLicense(); 
-		 model.addAttribute("license", license); 
+		 model.addAttribute("licenses", license); 
 		 return "License.jsp"; 
 	 }
 	 
@@ -46,7 +46,7 @@ public class LicenseController {
       if (result.hasErrors()) {
           return "newLicense.jsp";
       } else {
-          lService.createLicense(license);
+          this.lService.createLicense(license);
           return "redirect:/licenses";
       }
   }
