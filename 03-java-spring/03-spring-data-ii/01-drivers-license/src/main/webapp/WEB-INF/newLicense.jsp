@@ -8,13 +8,10 @@
 	<body>
 		<h1>newLicense.jsp</h1>
 		<form:form action="/licenses" method="post" modelAttribute="license">
-			<!--<form:hidden path="person" value="${person.id}"></form:hidden>-->
 			<p>Person:
 				<form:select path="person">
-				   <!--<form:option value = "NONE" label=""/>
-				   <form:options items = "${persons}" /> -->
 				   <c:forEach items="${persons}" var="person">
-            			<form:option value="${person.id}">${person.firstName} ${person.lastName}</form:option>
+            			<form:option value="${person.id}"> ${person.id} : ${person.firstName} ${person.lastName}</form:option>
         			</c:forEach>
 				</form:select> 
 		    </p>

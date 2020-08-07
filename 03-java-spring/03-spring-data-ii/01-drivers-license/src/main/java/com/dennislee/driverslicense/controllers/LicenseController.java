@@ -35,7 +35,7 @@ public class LicenseController {
 	}
 	
 	 @RequestMapping("/licenses") 
-	 public String index(Model model) { 
+	 public String index(Model model ) { 
 		 List<License> license = lService.allLicense(); 
 		 model.addAttribute("licenses", license); 
 		 return "License.jsp"; 
