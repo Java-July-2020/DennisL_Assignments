@@ -19,7 +19,7 @@
 		</thead>
 		<tbody><c:forEach items="${licenses}" var="license">
 			<tr>
-				<td>${license.person.firstName}</td>
+				<td><a href="/persons/${license.person.id}">${license.person.firstName}</a></td>
 				<td>${license.person.lastName}</td>
 				<td>${license.state}</td>
 				<td>${license.expiration_date}</td>

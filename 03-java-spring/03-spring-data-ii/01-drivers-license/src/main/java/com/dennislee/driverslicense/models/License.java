@@ -1,5 +1,6 @@
 package com.dennislee.driverslicense.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -25,7 +26,7 @@ public class License {
 	private Long id;
 	
 	@GeneratedValue
-	private String number;
+	private int number;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expiration_date;
@@ -64,11 +65,11 @@ public class License {
 		this.id = id;
 	}
 
-	public String getNumber() {
+	public int getNumber() {
 		return number;
 	}
 
-	public void setNumber(String number) {
+	public void setNumber(int number) {
 		this.number = number;
 	}
 
@@ -76,8 +77,13 @@ public class License {
 		return expiration_date;
 	}
 
-	public void setExpiration_date(Date expireation_date) {
-		this.expiration_date = expireation_date;
+	public void setExpiration_date(Date expiration_date) {
+		this.expiration_date = expiration_date;
+	}
+	
+	public String getExpirationDateFormatted() {
+		SimpleDateFormat fm = new SimpleDateFormat("MM/dd/yyyy");
+		return fm.format(this.expiration_date);
 	}
 
 	public String getState() {
@@ -110,6 +116,14 @@ public class License {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+	
+	public String getNumberAsString() {
+		int numZeros = 7 - String.valueOf(this.number).length();
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < numZeros; i++)
+			sb.append('0');
+		return String.format("%s%d", sb, this.number);
 	}
     
 }

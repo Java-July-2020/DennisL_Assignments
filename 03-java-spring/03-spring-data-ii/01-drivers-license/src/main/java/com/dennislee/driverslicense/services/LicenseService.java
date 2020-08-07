@@ -21,6 +21,16 @@ public class LicenseService {
 	}
 	
 	public License createLicense(License license) {
+		license.setNumber(this.generateLicenseNumber());
 		return lRepo.save(license);
+	}
+	
+	public int generateLicenseNumber() {
+		License l = lRepo.findTopByOrderByNumberDesc();
+		if(l == null)
+			return 1;
+		int largestNumber = l.getNumber();
+		largestNumber++;
+		return (largestNumber);
 	}
 }
