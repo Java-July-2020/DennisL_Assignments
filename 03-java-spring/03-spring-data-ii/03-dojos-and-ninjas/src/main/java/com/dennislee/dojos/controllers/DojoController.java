@@ -1,5 +1,7 @@
 package com.dennislee.dojos.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,10 +44,13 @@ public class DojoController {
 		}
 	}
 	
-	@RequestMapping("dojos/{id}")
+	@RequestMapping("/{id}")
 	public String viewPet(@PathVariable("id") Long id, Model model, @ModelAttribute("ninjas") Ninja Ninja) {
-		model.addAttribute("ninjas", this.nService.listAllNinja());
-		return "show.jsp";
+		List<Ninja> ninjas = this.nService.listAllNinja();
+		model.addAttribute("ninjas", ninjas);
+		Dojo dojo = this.dService.getDojo(id);
+		model.addAttribute("dojo", dojo);
+		return "showDojo.jsp";
 	}
 	
 }
