@@ -5,9 +5,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Categories</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
 	<h1>Category.jsp</h1>
+		<table class="table table-dark">
+			<thead>
+				<tr>
+					<td>Category ID:</td>
+					<td>Category Name:</td>
+				</tr>
+			</thead>
+			<tbody><c:forEach items="${categories}" var="category">
+				<tr>
+					<td>${category.id}</td>
+					<td><a href="/categories/${category.id}">${category.name}</a></td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 </body>
 </html>
