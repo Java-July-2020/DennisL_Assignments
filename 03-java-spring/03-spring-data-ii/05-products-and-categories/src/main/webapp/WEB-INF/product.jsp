@@ -10,6 +10,7 @@
 </head>
 <body>
 	<h1>Product.jsp</h1>
+	<p><a href="products/new">Add a new Product</a></p>
 		<table class="table table-dark">
 			<thead>
 				<tr>

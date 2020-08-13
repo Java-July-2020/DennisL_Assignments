@@ -10,6 +10,7 @@
 </head>
 <body>
 	<h1>Category.jsp</h1>
+	<p><a href="categories/new">Add a new Category</a></p>
 		<table class="table table-dark">
 			<thead>
 				<tr>
