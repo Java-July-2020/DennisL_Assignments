@@ -18,7 +18,7 @@ public class ProductService {
 	@Autowired
 	private CategoryRepository cRepo;
 	
-	public Product getProducty(Long id) {
+	public Product getProduct(Long id) {
 		Product set = this.pRepo.findById(id).orElse(null);
 		return set;
 	}

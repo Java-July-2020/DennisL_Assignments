@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -48,5 +49,11 @@ public class CategoryController {
 			this.cService.createCategory(category);
 			return "redirect:/categories";
 		}
+	}
+	
+	@RequestMapping("/{id}")
+	public String viewCategory(@PathVariable("id") Long id, Model model, @ModelAttribute("category") Category category) {
+		model.addAttribute("category", cService.getCategory(id));
+		return "showCategory.jsp";
 	}
 }
