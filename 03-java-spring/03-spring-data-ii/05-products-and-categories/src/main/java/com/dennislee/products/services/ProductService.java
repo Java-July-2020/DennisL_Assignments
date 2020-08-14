@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dennislee.products.models.Category;
 import com.dennislee.products.models.Product;
 import com.dennislee.products.repositories.CategoryRepository;
 import com.dennislee.products.repositories.ProductRepository;
@@ -37,5 +38,21 @@ public class ProductService {
 	
 	public Product updateProduct(Product product) {
 		return this.pRepo.save(product);
+	}
+	
+	//Add Category to Product
+	public void addCategory(Category category, Product product) {
+		// get the list from the pet
+		List<Category> categories = product.getCategories();
+		
+		// Add the category
+		categories.add(category);
+		
+		// Update Database
+		this.pRepo.save(product);
+	}
+	
+	public List<Category> getCategories(){
+		return this.cRepo.findAll();
 	}
 }

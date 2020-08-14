@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dennislee.products.models.Category;
+import com.dennislee.products.models.Product;
 import com.dennislee.products.services.CategoryService;
 import com.dennislee.products.services.ProductService;
 
@@ -54,6 +55,8 @@ public class CategoryController {
 	@RequestMapping("/{id}")
 	public String viewCategory(@PathVariable("id") Long id, Model model, @ModelAttribute("category") Category category) {
 		model.addAttribute("category", cService.getCategory(id));
+		List<Product> products = this.pService.getAllProduct();
+		model.addAttribute("products", products);
 		return "showCategory.jsp";
 	}
 }

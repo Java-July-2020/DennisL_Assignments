@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dennislee.products.models.Category;
+import com.dennislee.products.models.Product;
 import com.dennislee.products.repositories.CategoryRepository;
 import com.dennislee.products.repositories.ProductRepository;
 
@@ -37,5 +38,21 @@ public class CategoryService {
 	
 	public Category updateCategory(Category category) {
 		return this.cRepo.save(category);
+	}
+	
+	//Add Product to Category
+	public void addProduct(Product product, Category category) {
+		// get the list from the pet
+		List<Product> products = category.getProducts();
+		
+		// Add the product
+		products.add(product);
+		
+		// Update Database
+		this.cRepo.save(category);
+	}
+	
+	public List<Product> getProducts(){
+		return this.pRepo.findAll();
 	}
 }

@@ -9,6 +9,19 @@
 </head>
 <body>
 	<h1>showProduct.jsp</h1>
-	<h3>Product: <c:out value="${product.name}"></c:out></h3>
+	<div>
+		<h3>Product: <c:out value="${product.name}"></c:out></h3>
+	</div>
+	<div>
+			<h4>Categories:</h4>
+			<p>
+				<c:forEach items="${categories}" var="category">
+					<option value="${category.id}">${category.name}</option>
+				</c:forEach>
+			</p>
+			<p>  
+			    <button>Create</button>
+			</p>
+	</div>
 </body>
 </html>
