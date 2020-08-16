@@ -39,7 +39,7 @@
 				<input type="hidden" name="categoryID" value="${category.id}">
 			</p>
 			<p>  
-			    <button>Create</button>
+			    <button>Add</button>
 			</p>
 		</form>
 	</div>
