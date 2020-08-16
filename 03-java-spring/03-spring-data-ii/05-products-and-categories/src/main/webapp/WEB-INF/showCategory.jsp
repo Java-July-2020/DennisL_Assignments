@@ -15,9 +15,13 @@
 	<div>
 			<h4>Products:</h4>
 			<p>
-				<c:forEach items="${products}" var="product">
-					<option value="${product.id}">${product.name}</option>
-				</c:forEach>
+				<form:label path="products">Product:</form:label>
+				<form:errors path="prodcuts"></form:errors>
+				<form:select path="products">
+					<c:forEach items="${products}" var="product">
+						<option value="${product.id}">${product.name}</option>
+					</c:forEach>
+				</form:select>
 			</p>
 			<p>  
 			    <button>Create</button>
