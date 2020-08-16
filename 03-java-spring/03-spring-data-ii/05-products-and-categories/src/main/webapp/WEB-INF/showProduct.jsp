@@ -14,7 +14,7 @@
 			<c:forEach items="${categories}" var="category">
 				<c:choose>
 					<c:when test="${product.categories.contains(category)}">
-							<td>${category.name}</td>
+							<td><p>${category.name}</p></td>
 					</c:when>
 					<c:otherwise>
 						<td></td>
@@ -23,20 +23,25 @@
 			</c:forEach>
 	</div>
 	<div>
-		<%--<form:form method="POST" action="/CategoryToProduct.add">   --%>
+		<form method="POST" action="/products/add">
 			<p>
-				<form:label path="categories">Category:</form:label>
-				<form:errors path="categories"></form:errors>
-				<form:select path="categories">
+				<select name="categoryID">
 					<c:forEach items="${categories}" var="category">
-						<option value="${category.id}">${category.name}</option>
+						<c:choose>
+							<c:when test="${product.categories.contains(category)}">
+							</c:when>
+							<c:otherwise>
+									<option value="${category.id}">${category.name}</option>
+							</c:otherwise>
+						</c:choose>
 					</c:forEach>
-				</form:select>
+				</select>
+				<input type="hidden" name="productID" value="${product.id}">
 			</p>
 			<p>  
 			    <button>Create</button>
 			</p>
-		<%--  </form:form> --%>
+		</form>
 	</div>
 </body>
 </html>

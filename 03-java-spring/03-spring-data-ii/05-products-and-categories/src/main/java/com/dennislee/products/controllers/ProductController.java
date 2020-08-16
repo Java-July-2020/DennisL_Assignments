@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dennislee.products.models.Category;
 import com.dennislee.products.models.Product;
@@ -55,6 +56,18 @@ public class ProductController {
 	@RequestMapping("/{id}")
 	public String viewProduct(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("product", pService.getProduct(id));
+		List<Category> categories = this.cService.getAllCategory();
+		model.addAttribute("categories", categories);
+		return "showProduct.jsp";
+	}
+	
+	@PostMapping("/add")
+	public String addCategory(@RequestParam("categoryID") Long cID, @RequestParam("productID") Long pID, Model model) {
+		Product product = this.pService.getProduct(pID);
+		Category category = this.cService.getCategory(cID);
+		this.pService.addCategory(category, product);
+		
+		model.addAttribute("product", product);
 		List<Category> categories = this.cService.getAllCategory();
 		model.addAttribute("categories", categories);
 		return "showProduct.jsp";
