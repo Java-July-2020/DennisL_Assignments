@@ -14,7 +14,7 @@
 			<c:forEach items="${categories}" var="category">
 				<c:choose>
 					<c:when test="${product.categories.contains(category)}">
-							<td><p>${category.name}</p></td>
+							<td><p>- ${category.name}</p></td>
 					</c:when>
 					<c:otherwise>
 						<td></td>
