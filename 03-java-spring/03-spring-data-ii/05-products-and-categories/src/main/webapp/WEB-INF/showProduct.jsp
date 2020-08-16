@@ -11,9 +11,20 @@
 	<h1>showProduct.jsp</h1>
 	<div>
 		<h3>Product: <c:out value="${product.name}"></c:out></h3>
+			<c:forEach items="${categories}" var="category">
+				<c:choose>
+					<c:when test="${product.categories.contains(category)}">
+							<td>${category.name}</td>
+					</c:when>
+					<c:otherwise>
+						<td></td>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
 	</div>
 	<div>
-			<h4>Categories:</h4>
+		<h4>Categories:</h4>
+		<%--<form:form method="POST" action="/products/add">   --%>
 			<p>
 				<form:label path="categories">Category:</form:label>
 				<form:errors path="categories"></form:errors>
@@ -26,6 +37,7 @@
 			<p>  
 			    <button>Create</button>
 			</p>
+		<%--  </form:form> --%>
 	</div>
 </body>
 </html>
