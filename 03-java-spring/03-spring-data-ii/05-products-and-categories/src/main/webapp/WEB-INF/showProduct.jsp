@@ -23,8 +23,7 @@
 			</c:forEach>
 	</div>
 	<div>
-		<h4>Categories:</h4>
-		<%--<form:form method="POST" action="/products/add">   --%>
+		<%--<form:form method="POST" action="/CategoryToProduct.add">   --%>
 			<p>
 				<form:label path="categories">Category:</form:label>
 				<form:errors path="categories"></form:errors>

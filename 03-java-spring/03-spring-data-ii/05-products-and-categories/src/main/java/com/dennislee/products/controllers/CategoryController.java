@@ -53,7 +53,7 @@ public class CategoryController {
 	}
 	
 	@RequestMapping("/{id}")
-	public String viewCategory(@PathVariable("id") Long id, Model model, @ModelAttribute("category") Category category) {
+	public String viewCategory(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("category", cService.getCategory(id));
 		List<Product> products = this.pService.getAllProduct();
 		model.addAttribute("products", products);

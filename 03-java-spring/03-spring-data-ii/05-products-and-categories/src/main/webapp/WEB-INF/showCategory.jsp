@@ -23,8 +23,7 @@
 			</c:forEach>
 	</div>
 	<div>
-		<h4>Products:</h4>
-		<%--  <form:form method="POST" action="/categories/add"> --%>
+		<%--  <form method="POST" action="/categories/add"> --%>
 			<p>
 				<form:label path="products">Product:</form:label>
 				<form:errors path="prodcuts"></form:errors>
@@ -37,7 +36,7 @@
 			<p>  
 			    <button>Create</button>
 			</p>
-		<%--  </form:form> --%>
+		<%--  </form> --%>
 	</div>
 </body>
 </html>

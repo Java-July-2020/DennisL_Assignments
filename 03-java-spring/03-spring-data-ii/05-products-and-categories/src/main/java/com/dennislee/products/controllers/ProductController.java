@@ -53,7 +53,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/{id}")
-	public String viewProduct(@PathVariable("id") Long id, Model model, @ModelAttribute("product") Product product) {
+	public String viewProduct(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("product", pService.getProduct(id));
 		List<Category> categories = this.cService.getAllCategory();
 		model.addAttribute("categories", categories);
