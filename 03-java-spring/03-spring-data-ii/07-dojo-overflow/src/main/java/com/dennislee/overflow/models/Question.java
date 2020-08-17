@@ -100,6 +100,10 @@ public class Question {
 	public void setAnswers(List<Answer> answers) {
 		this.answers = answers;
 	}
+	
+	public void addAnswers(Answer answer) {
+		this.answers.add(answer);
+	}
 
 	public List<Tag> getTags() {
 		return tags;
@@ -107,6 +111,10 @@ public class Question {
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+	
+	public void addTags(Tag tag) {
+		this.tags.add(tag);
 	}
 	
 }
