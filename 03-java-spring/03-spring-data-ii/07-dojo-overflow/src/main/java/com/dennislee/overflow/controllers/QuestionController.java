@@ -54,7 +54,7 @@ public class QuestionController {
 			return "newQuestion.jsp";
 		}
 		else {
-			this.qService.createQuestion(question);
+			Question newQuestion = this.qService.createQuestion(question);
 			return "redirect:/questions";
 		}
 	}
