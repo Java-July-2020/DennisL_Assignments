@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dennislee.overflow.models.Question;
@@ -33,5 +34,10 @@ public class QuestionController {
 		viewModel.addAttribute("questions", questions);
 		viewModel.addAttribute("tags", tags);
 		return "dashboard.jsp";
+	}
+	
+	@RequestMapping("/new")
+	public String newQuestion(@ModelAttribute("question") Question question, @ModelAttribute("tag") Tag tag) {
+		return "newQuestion.jsp";
 	}
 }
