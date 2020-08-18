@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -28,6 +30,7 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
 	private String question;
 	
 	@Column(updatable=false)
@@ -47,6 +50,9 @@ public class Question {
 			inverseJoinColumns= @JoinColumn(name="tag_id")
 		)
 	private List<Tag> tags;
+	
+	@Transient
+	private String parseTags;
 	
 	@PrePersist
 	protected void onCreate() {
@@ -115,6 +121,14 @@ public class Question {
 	
 	public void addTags(Tag tag) {
 		this.tags.add(tag);
+	}
+
+	public String getParseTags() {
+		return parseTags;
+	}
+
+	public void setParseTags(String parseTags) {
+		this.parseTags = parseTags;
 	}
 	
 }

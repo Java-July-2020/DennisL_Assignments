@@ -11,4 +11,8 @@ import com.dennislee.overflow.models.Question;
 public interface QuestionRepository extends CrudRepository<Question, Long>{
 
 	List<Question> findAll();
+	
+	boolean existsByQuestion(String question);
+	
+	Question findByQuestion(String question);
 }

@@ -12,23 +12,21 @@
 <body>
 	<h1>What is your question?</h1><br>
 	<div class="container">
-			<form:form action="/questions/add" method="post" modelAttribute="question">
+			<form:form action="/questions/add" method="post" modelAttribute="questions">
 			    <div class="form-group">
 			        <form:label path="question">Question:</form:label>
 			        <form:errors path="question"/>
-			        <form:input class="form-control" path="question" type="text-area"/>
+			        <form:input class="form-control" path="question"/>
 			    </div>
-			</form:form>
-			<form:form action="/questions/add" method="post" modelAttribute="tag">
-				<div class=form-group>
-					<form:label path="subject">Tags:</form:label>
-			        <form:errors path="subject"/>
-			        <form:input class="form-control" path="subject"/>
+				<%-- <div class=form-group>
+					<form:label path="parseTags">Tags:</form:label>
+			        <form:errors path="parseTags"/>
+			        <form:input class="form-control" path="parseTags"/>
+				</div>
+				 --%><div>
+					<input class="btn btn-danger" type="submit" value="Submit"/>
 				</div>
 			</form:form>
-			<div>
-				<input class="btn btn-danger" type="submit" value="Submit"/>
-			</div>
 	</div>
 </body>
 </html>
