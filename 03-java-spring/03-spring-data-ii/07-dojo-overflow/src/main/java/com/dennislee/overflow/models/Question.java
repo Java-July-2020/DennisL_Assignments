@@ -66,6 +66,11 @@ public class Question {
 
 	public Question() {
 	}
+	
+	public Question(String question, List<Tag> tags) {
+		this.question = question;
+		this.tags = tags;
+	}
 
 	public Long getId() {
 		return id;

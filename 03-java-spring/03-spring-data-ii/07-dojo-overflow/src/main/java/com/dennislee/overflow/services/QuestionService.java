@@ -1,11 +1,13 @@
 package com.dennislee.overflow.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dennislee.overflow.models.Answer;
+import com.dennislee.overflow.models.NewQuestion;
 import com.dennislee.overflow.models.Question;
 import com.dennislee.overflow.models.Tag;
 import com.dennislee.overflow.repositories.AnswerRepository;
@@ -19,9 +21,6 @@ public class QuestionService {
 	private QuestionRepository qRepo;
 	
 	@Autowired
-	private AnswerRepository aRepo;
-	
-	@Autowired
 	private TagRepository tRepo;
 	
 	public Question getQuestion(Long id) {
@@ -33,8 +32,21 @@ public class QuestionService {
 		return this.qRepo.findAll();
 	}
 	
-	public Question createQuestion(Question question) {
-		return this.qRepo.save(question);
+	public void createQuestion(NewQuestion question) {
+		// TODO: make a real question here
+		List<Tag> questionsTags = new ArrayList<Tag>();
+		for(String subject: question.splitTags()) {
+			Tag tag = this.tRepo.findBySubject(subject).orElse(null);
+			if(tag == null) {
+				tag = new Tag(subject);
+				this.tRepo.save(tag);
+			}
+			// prevent duplicate tags
+			if(!questionsTags.contains(tag))
+				questionsTags.add(tag);
+		}
+		Question newQuestion = new Question(question.getQuestion(), questionsTags);
+		this.qRepo.save(newQuestion);
 	}
 	
 	public void deleteQuestion(Long id) {

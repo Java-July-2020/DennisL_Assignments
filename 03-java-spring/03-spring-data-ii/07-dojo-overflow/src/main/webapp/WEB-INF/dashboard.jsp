@@ -19,18 +19,16 @@
 				</tr>
 			</thead>
 			<tbody><c:forEach items="${questions}" var="question">
-				<tr>
-					<td>${question.question}</td>
-					<td>
-						<c:forEach items="${tags}" var="tag">
-							<c:choose>
-								<c:when test="${question.tags.contains(tag)}">
-										<span>${tag.subject}, </span>
-								</c:when>
-							</c:choose>
+					<tr>
+						<td><a href="questions/${question.id}">${question.question}</a></td>
+						<td>
+						<c:forEach items="${question.tags}" var="tag">
+							<span>${tag.subject}
+								<c:if test="${question.tags.indexOf(tag) != question.tags.size() - 1 }">, </c:if>
+							</span>
 						</c:forEach>
-					</td>
-				</tr>
+						</td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

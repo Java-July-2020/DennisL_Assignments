@@ -19,9 +19,9 @@
 			        <form:input class="form-control" path="question"/>
 			    </div>
 				<div class=form-group>
-					<form:label path="parseTags">Tags:</form:label>
-			        <form:errors path="parseTags"/>
-			        <form:input class="form-control" path="parseTags"/>
+					<form:label path="tags">Tags:</form:label>
+			        <form:errors path="tags"/>
+			        <form:input class="form-control" path="tags"/>
 				</div>
 				<div>
 					<input class="btn btn-danger" type="submit" value="Submit"/>

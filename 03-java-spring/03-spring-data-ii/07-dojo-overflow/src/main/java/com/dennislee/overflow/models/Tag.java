@@ -54,6 +54,10 @@ public class Tag {
 
 	public Tag() {
 	}
+	
+	public Tag(String subject) {
+		this.subject = subject;
+	}
 
 	public Long getId() {
 		return id;
