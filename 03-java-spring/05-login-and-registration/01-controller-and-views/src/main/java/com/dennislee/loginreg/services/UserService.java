@@ -24,6 +24,11 @@ public class UserService {
 		return this.uRepo.findAll();
 	}
 	
+	public User findByEmail(String email) {
+		User user = this.uRepo.findByEmail(email);
+		return user;
+	}
+	
 	public User registerUser(User user) {
 		// Generate a Hash
 		String hash = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());

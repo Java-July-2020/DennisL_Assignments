@@ -5,22 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
+	<meta charset="UTF-8">
+	<title>Welcome</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <p><c:out value="${error}" /></p>
-    <form method="post" action="/login">
-        <p>
-            <label type="email" for="email">Email</label>
-            <input type="text" id="email" name="email"/>
-        </p>
-        <p>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"/>
-        </p>
-        <input type="submit" value="Login!"/>
-    </form>    
+	<h1>Welcome, <c:out value="${user.email}" /></h1>
+	<a href="/logout">Logout</a>
 </body>
 </html>

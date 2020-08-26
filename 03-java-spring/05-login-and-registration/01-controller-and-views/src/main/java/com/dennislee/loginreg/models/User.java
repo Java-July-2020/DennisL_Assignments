@@ -25,9 +25,6 @@ public class User {
 	private Long id;
 	
 	@NotEmpty
-	private String name;
-	
-	@NotEmpty
 	@Email
 	private String email;
 	
@@ -36,7 +33,7 @@ public class User {
 	private String password;
 	
 	@Transient
-	private String confirmPassword;
+	private String passwordConfirmation;
 	
 	@DateTimeFormat(pattern = "MM/dd/yyyy HH:mm:ss")
 	private Date createdAt;
@@ -65,14 +62,6 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -89,12 +78,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getConfirmPassword() {
-		return confirmPassword;
+	public String getPasswordConfirmation() {
+		return passwordConfirmation;
 	}
 
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
+	public void setPasswordConfirmation(String passwordConfirmation) {
+		this.passwordConfirmation = passwordConfirmation;
 	}
 
 	public Date getCreatedAt() {
@@ -112,5 +101,5 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+
 }
