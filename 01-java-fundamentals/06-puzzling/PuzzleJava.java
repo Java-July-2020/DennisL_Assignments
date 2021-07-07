@@ -1,3 +1,5 @@
+//Forked code in order to compare and contrast.
+
 import java.util.*;
 
 public class PuzzleJava{
